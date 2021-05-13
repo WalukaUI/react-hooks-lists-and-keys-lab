@@ -1,12 +1,19 @@
 import React from "react";
 
-function ProjectItem({ name, about, technologies }) {
+let TechCard=(a)=>{
+  let eachTech=a.map((e)=>{
+    return <span key={e}>{e}</span>
+  })
+  return eachTech
+}
+
+function ProjectItem({ name, about, technologies}) {
   return (
-    <div className="project-item">
+    <div className="project-item" >
       <h3>{name}</h3>
       <p>{about}</p>
       <div className="technologies">
-        {/* render a <span> for each technology in the technologies array */}
+        {TechCard(technologies)}
       </div>
     </div>
   );
